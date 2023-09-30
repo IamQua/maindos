@@ -1,6 +1,3 @@
-
-
-
 const button = document.querySelector("button");
 
 window.addEventListener("scroll", () => {

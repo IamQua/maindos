@@ -69,3 +69,5 @@ solarButton.onclick = () => {
     localStorage.setItem('isSolar', true);
   }
 };
+
+

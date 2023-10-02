@@ -105,10 +105,10 @@ const handleChange = () => {
           && element.type !== 'checkbox'
           && element.type !== 'radio'
     ) {
-      element.style.borderColor = 'red'
-      element.nextElementSibling.style.color = 'red'
+      element.style.borderColor = 'orange'
+      element.nextElementSibling.style.color = 'orange'
       element.nextElementSibling.style.display = 'block'
-      element.previousElementSibling.style.color = 'red'
+      element.previousElementSibling.style.color = 'orange'
     }
 
     // If the element is valid, reset its style to the original colors
@@ -122,7 +122,7 @@ const handleChange = () => {
       element.style.borderColor = '#CED4DA'
       element.nextElementSibling.style.color = '#CED4DA'
       element.nextElementSibling.style.display = 'none'
-      element.previousElementSibling.style.color = '#212529'
+      element.previousElementSibling.style.color = '#19ec1b'
     }
 
     // If the element is a checkbox or a radio button and is invalid, style it with a red border and red text
@@ -130,8 +130,8 @@ const handleChange = () => {
           && (element.type === 'checkbox'
               || element.type === 'radio')
     ) {
-      element.style.borderColor = 'red'
-      element.nextElementSibling.style.color = 'red'
+      element.style.borderColor = 'orange'
+      element.nextElementSibling.style.color = 'orange'
     }
 
     // If the checkbox or radio button is valid, reset its style to the original colors
@@ -140,27 +140,27 @@ const handleChange = () => {
               || element.type === 'radio')
     ) {
       element.style.borderColor = '#CED4DA'
-      element.nextElementSibling.style.color = '#212529'
+      element.nextElementSibling.style.color = '#19ec1b'
     }
 
     // If the element is a select dropdown and the default option is selected, style it with a red border and red text
     if (element.nodeName === 'SELECT'
           && element.value === 'Please select an option'
     ) {
-      element.style.borderColor = 'red'
-      element.nextElementSibling.style.color = 'red'
+      element.style.borderColor = 'orange'
+      element.nextElementSibling.style.color = 'orange'
       element.nextElementSibling.style.display = 'block'
-      element.previousElementSibling.style.color = 'red'
+      element.previousElementSibling.style.color = 'orange'
     }
 
     // If an option other than the default is selected in the dropdown, reset its style to the original colors
     if (element.nodeName === 'SELECT'
           && element.value !== 'Please select an option'
     ) {
-      element.style.borderColor = '#CED4DA'
-      element.nextElementSibling.style.color = '#CED4DA'
+      element.style.borderColor = '#19ec1b'
+      element.nextElementSibling.style.color = '#19ec1b'
       element.nextElementSibling.style.display = 'none'
-      element.previousElementSibling.style.color = '#212529'
+      element.previousElementSibling.style.color = '#19ec1b'
     }
   })
 

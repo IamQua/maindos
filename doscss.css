@@ -464,9 +464,11 @@ a {
     width: 100%;
     min-height: 100vh;
     display: flex;
+    text-align: center;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    font-family: fantasy;
   }
   
   #form-submitted-msg {
@@ -506,10 +508,12 @@ a {
     display: flex;
     gap: 1.5rem;
     width: 100%;
+    justify-content: center;
   }
   
   .input-group.select select {
     width: 100%;
+    font-family: fantasy;
   }
   
   legend {
@@ -522,14 +526,19 @@ a {
     width: 100%;
     gap: 1rem;
     margin-top: 2.5rem;
+    justify-content: center;
+    
   }
   
   .form-btns > button {
     padding: 0.3rem 1.5rem;
+    font-family: fantasy;
+    
   }
   
   .form-btns > .submit {
     padding-inline: 3rem;
+    
   }
   
   .error-msg {

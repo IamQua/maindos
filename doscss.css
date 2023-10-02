@@ -59,7 +59,7 @@ h1 {
     background-color: cornflowerblue;
   }
   
-  .buttonstuff {
+  .buttonstuff, .btn {
     width: 200px;
     border-radius: 25px;
     font-family:fantasy;
@@ -73,7 +73,7 @@ h1 {
     transition: all 1s ease-out;
   }
   
-  .buttonstuff:hover {
+  .buttonstuff, .btn:hover {
     border-color: rgb(70, 130, 180);
     background: white;
     color: rgb(11, 32, 32);
@@ -469,6 +469,7 @@ a {
     justify-content: center;
     flex-direction: column;
     font-family: fantasy;
+    font-size: xx-large;
   }
   
   #form-submitted-msg {

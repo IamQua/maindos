@@ -105,7 +105,7 @@ const handleChange = () => {
           && element.type !== 'checkbox'
           && element.type !== 'radio'
     ) {
-      element.style.borderColor = 'orange'
+      element.style.borderColor = 'white'
       element.nextElementSibling.style.color = 'orange'
       element.nextElementSibling.style.display = 'block'
       element.previousElementSibling.style.color = 'orange'

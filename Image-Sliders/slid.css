@@ -46,6 +46,7 @@ h1 {
   height: 100%;
   opacity: 0;
   transition: all 1s ease-in-out;
+  border-radius: 28%;
 }
 
 #slider img.active {
@@ -78,4 +79,13 @@ button#prev {
 button#next {
   right: -35px;
   padding: 7px 15px 7px 17px;
+}
+
+.gametxt {
+text-align: center;
+position: relative;
+text-align: center;
+color: #ffffff;
+font-family: fantasy;
+text-align: center;
 }

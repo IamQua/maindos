@@ -36,7 +36,7 @@ h1 {
   .Hmidbod1{font-family:fantasy; color: #f9fffe; text-indent: 3%; text-shadow: 1px 2px #f342e7; font-size:xx-large; margin: auto; }
   .Hmidbod2{font-family:fantasy; color: #f9fffe; text-indent: 3%; text-shadow: 1px 2px #f342e7; font-size:xx-large;  display: inline-block; vertical-align: middle; float:none; }
   .Lbod{font-family:fantasy; font-size:xx-large; color:white}
-  .midbod{font-family:fantasy; font-size:x-large; color:pink; margin: auto; width: 88%;}
+  .midbod{font-family:fantasy; font-size:x-large; color:rgb(255, 250, 251); margin: auto; width: 88%;}
   .bottomH{font-family:fantasy; font-size:xx-large; margin: auto; width: 66%;}
   .bottomt{font-family:fantasy; font-size:x-large; color:white; margin: auto; width: 93%;}
   .form-center{ text-align: center;}

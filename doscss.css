@@ -93,7 +93,7 @@ h1 {
   .middle{padding:5%; border-style: inset; border-color: rgb(198, 21, 198); border-width: 4px; border-radius: 48%}
   .middle1{padding:3%; border-style: inset; border-color: rgb(75, 9, 189); border-width: 4px; border-radius: 54%}
 
-  .header1,.wrapper{display: flex; align-items: center; justify-content: space-evenly; margin-inline: auto; padding: 2rem; animation: fade-in-right 16s forwards;}
+  .header1,.wrapper,.top{display: flex; align-items: center; justify-content: space-evenly; margin-inline: auto; padding: 2rem; animation: fade-in-right 16s forwards;}
   @keyframes fade-in-right {0% {transform: translateX(-10%);opacity: 0;} 100% {transform: translateX(0);opacity: 1}}
   @media (prefers-reduced-motion)
   {.header1,.wrapper{animation:none;}

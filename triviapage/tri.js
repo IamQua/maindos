@@ -6,8 +6,8 @@ const continueBtn = document.querySelector('.continue-btn');
 const quizSection = document.querySelector('.quiz-section');
 const quizBox = document.querySelector('.quiz-box');
 const resultBox = document.querySelector('.result-box');
-const tryAgainBtn = document.querySelector('.tryAgainBtn');
-const goHomeBtn = document.querySelector('.goHome-Btn');
+const tryAgainBtn = document.querySelector('.tryAgain-btn');
+const goHomeBtn = document.querySelector('.goHome-btn');
 
 startBtn.onclick = () => {
     popupInfo.classList.add('active');
@@ -60,7 +60,7 @@ let questionCount = 0;
 let questionNumb = 1;
 let userscore = 0;
 
-const nextBin = document.querySelector('.next-btn');
+const nextBtn = document.querySelector('.next-btn');
 
 nextBtn.onclick = () => {
     if (questionCount < questions.length - 1) {
@@ -70,7 +70,7 @@ nextBtn.onclick = () => {
         questionNumb++;
         questionCounter(questionNumb);
 
-        nextBin.classList.remove('active');
+        nextBtn.classList.remove('active');
 }
     else {
     showResultsBox();
@@ -88,6 +88,7 @@ function showQuestions(index) {
         <div class="option"><span>${questions[index].options[1]}</span></div>
         <div class="option"><span>${questions[index].options[2]}</span></div>
         <div class="option"><span>${questions[index].options[3]}</span></div>`;
+        
 
         optionList.innerHTML = optionTag;
 
@@ -123,12 +124,12 @@ function optionSelected(answer) {
         optionList.children[i].classList.add('disabled');
     }
 
-    nextBin.classList.add('active');
+    nextBtn.classList.add('active');
 }
 
 function questionCounter(index) {
     const questionTotal = document.querySelector('.question-total');
-    questionTotal.textContent = `${index} of ${questions.length} Questions`;
+    questionTotal.textContent = `${index} of ${questions.length} questions`;
 }
 
 function headerScore() {

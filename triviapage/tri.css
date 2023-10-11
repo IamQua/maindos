@@ -351,7 +351,7 @@ margin: 4px 0;
     color: #ffff;
 }
 
-.quiz-footer, .next-btn.active:hover {
+.quiz-footer .next-btn.active:hover {
     background: #950170;
     background-color: #950170;
 }

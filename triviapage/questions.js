@@ -2,7 +2,7 @@ let questions = [
     {
         num: 1,
         question: "What does HTML stand for?",
-        answer: "C. Hyper Text Markup Language",
+        answer: "A. Hyper Text Markup Language",
         options: [
             "A. Hyper Type Multi Language",
             "B. Hyper Text Multiple Language",

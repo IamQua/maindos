@@ -1,107 +1,77 @@
-// Write your code here
-import questions from './questions.json' assert { type: 'json' }
-import users from './users.json' assert { type: 'json' }
+const startBtn = document.querySelector('.start-btn');
+const pupInfo = document.querySelector('.pup-info');
+const exitBtn = document.querySelector('.exit-btn');
+const main = document.querySelector('.main');
+const continueBtn = document.querySelector('.continue-btn');
+const quizSection = document.querySelector('.quiz-section');
+const quizBox = document.querySelector('.quiz-box');
 
-// Get all DOM elements
-const usernameInput = document.getElementById('username')
-const validationMsg = document.getElementById('validation-msg')
-const startBtn = document.getElementById('start-btn')
-const nextBtns = document.querySelectorAll('.next-question')
-const playAgainBtn = document.getElementById('play-again')
-const startSection = document.getElementById('start')
-const currentUserDisplay = document.getElementById('user-display')
-const questionGroups = document.querySelectorAll('.question')
-const endSection = document.getElementById('game-end')
-const finalScoreSpan = document.querySelector('span[id="score"]')
-const answerButtons = document.querySelectorAll('.answer')
-const modal = document.getElementById('modal');
-const openModal = document.getElementById('show-details');
-const closeModal = document.getElementById('modal-close');
-const questionsInModal = document.querySelectorAll('.game-question')
-const userStatsItems = document.querySelectorAll('.user-stat')
+startBtn.onclick = () => {
+    pupInfo.classList.add('active');
+    main.classList.add('active');
+} 
 
-// Create array from all the answer buttons
-const answers = [...answerButtons]
+exitBtn.onclick = () => {
+    pupInfo.classList.remove('active');
+    main.classList.remove('active');
+} 
 
+continueBtn.onclick = () => {
+    quizSection.classList.add('active');
+    pupInfo.classList.remove('active');
+    main.classList.remove('active');
+    quizBox.classList.add('active');
 
-// Create array from buttons which trigger the displayed <section> element to change
-const nextSectionTriggers = [startBtn, ...nextBtns]
+    showQuestions(0);
+    questionCounter(1);
+} 
 
+let questionCount = 0;
+let questionNumb = 1;
 
-// Create an array from all the <section> elements
-const sections = [startSection, ...questionGroups, endSection]
+const nextBin = document.querySelector('.next-btn');
 
+nextBtn.onclick = () => {
+    if (questionCount < questions.length - 1) {
+    questionCount++;
+    showQuestions(questionCount);
 
-// Create an array from all question <li> elements in detailed results modal
-const resultsQuestions = [ ...questionsInModal ]
-
-
-// Create an array from all stat <li> elements at the end of the game
-const resultsStats = [ ...userStatsItems ]
-
-
-// Create array from the questions.json object keys, which will help in selecting random questions
-const questionsKeysArray = Object.keys(questions)
-
-
-// Create array from the users.json object values
-const usersValuesArray = Object.values(users)
-
-
-// Create a new set which will store 10 random questions
-const randomTen = new Set()
-
-
-// Create a set to store fake users
-const gameUsers = new Set()
-
-
-// Create a variable to store current user's chosen username
-let currentUser
-
-
-// Create a variable to store the user's running score
-let runningScore = 0
-
-
-// Declare necessary variables for cycling through the <section> elements
-const lastSectionIndex = sections.length - 1
-let displayedSectionIndex = 0
-let sectionOffset
-
-
-// Declare necessary variables to display a question and store the selected answer
-let nextQuestionNumber = displayedSectionIndex + 1
-let currentQuestion
-let selectedAnswer
-let correctAnswer
-let userSelection = false
-
-
-// Create map to store detailed results
-const currentUserDetailedResults = new Map()
-currentUserDetailedResults.set("results", [])
-
-
-// Create map to store all users stats
-const usersStats = new Map()
-usersStats.set("stats", [])
-// Add fake users’ usernames to gameUsers Set and the full fake user objects to userStats Map
-for (const user of usersValuesArray) {
-  gameUsers.add(user.username)
-  usersStats.entries().next().value[1].push(user)
+    questionNumb++;
+    questionCounter(questionNumb);
 }
-// Add 10 random questions from JSON file to the randomTen array
-while (randomTen.size < 10) {
-  const randomIndex = Math.floor(Math.random() * questionsKeysArray.length)
-  const randomObjectKey = questionsKeysArray[randomIndex]
-  if (randomTen.has(questions[randomObjectKey])) {
-    continue;
-  } else {
-    randomTen.add(questions[randomObjectKey])
+else {
+    console.log ('Question Completed!');
   }
 }
+const optionList = document.querySelector('.option-list');
 
 
-// Get access to the set's values
-const randomQuestionSet = randomTen.values()
+//getting questions and options from array
+function showQuestions(index) {
+    const questionText = document.querySelector('.question-text');
+    questionText.textContent = `${questions[index].numb}. ${questions[index].question}`;
+
+    let optionTag = `<div class="option"><span>${questions[index].options[0]}</span></div>
+        <div class="option"><span>${questions[index].options[1]}</span></div>
+        <div class="option"><span>${questions[index].options[2]}</span></div>
+        <div class="option"><span>${questions[index].options[3]}</span></div>`;
+
+        optionList.innerHTML = optionTag;
+
+        const option = document.querySelectorAll('.option');
+        for (let i = 0; i < option.length; i++) {
+            option[i].setAttribute('onclick','optionSelected(this)');
+        }
+}
+
+function optionSelected(answer) {
+    let userAnswer = answer.textContent;
+    let correctAnswer = qquestions[questionCount].answer;
+    console.log(correctAnswer);
+
+}
+
+function questionCounter(index) {
+    const questionTotal = document.querySelector('.');
+    questionTotal.textContent = `${index} of ${questions.length} Questions`;
+}

@@ -37,7 +37,7 @@ tryAgainBtn.onclick = () => {
 
     questionCount = 0;
     questionNumb = 1;
-    userscore = 0;
+    userScore = 0;
     showQuestions(questionCount);
     questionCounter(questionNumb);
 
@@ -51,19 +51,19 @@ goHomeBtn.onclick = () => {
 
     questionCount = 0;
     questionNumb = 1;
-    userscore = 0;
+    userScore = 0;
     showQuestions(questionCount);
     questionCounter(questionNumb);
 } 
 
 let questionCount = 0;
 let questionNumb = 1;
-let userscore = 0;
+let userScore = 0;
 
 const nextBtn = document.querySelector('.next-btn');
 
 nextBtn.onclick = () => {
-    if (questionCount < questions.length - 1) {
+    if (questionCount < questions.length - 1 ) {
         questionCount++;
         showQuestions(questionCount);
 
@@ -100,7 +100,7 @@ function showQuestions(index) {
 
 function optionSelected(answer) {
     let userAnswer = answer.textContent;
-    let correctAnswer = qquestions[questionCount].answer;
+    let correctAnswer = questions[questionCount].answer;
     let allOptions = optionList.children.length;
 
     if (userAnswer == correctAnswer) {
@@ -147,7 +147,7 @@ function showResultsBox() {
     const circularProgress = document.querySelector('.circular-progress');
     const ProgressValue = document.querySelector('.progress-value');
     let progressStartValue = -1;
-    let progressEndValue = userscore / (questions.length) * 100;
+    let progressEndValue = userScore / (questions.length) * 100;
     let speed = 20;
 
     let progress = setInterval(() => {

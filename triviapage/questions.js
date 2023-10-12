@@ -1,8 +1,8 @@
 let questions = [
     {
-        num: 1,
+        numb: 1,
         question: "What does HTML stand for?",
-        answer: "A. Hyper Text Markup Language",
+        answer: "C. Hyper Text Markup Language",
         options: [
             "A. Hyper Type Multi Language",
             "B. Hyper Text Multiple Language",
@@ -11,7 +11,7 @@ let questions = [
         ]
     },
     {
-        num: 2,
+        numb: 2,
         question: "What does CSS stand for?",
         answer: "A.Cascading Style Sheet",
         options: [ 
@@ -22,7 +22,7 @@ let questions = [
         ]
     },
     {
-        num: 3,
+        numb: 3,
         question: "What does PHP stand for?",
         answer: "A. Hypertext Preprocessor",
         options: [
@@ -33,7 +33,7 @@ let questions = [
         ]
     },
     {
-        num: 4,
+        numb: 4,
         question: "What does SQL stand for?",
         answer: "D. Structured Query Language",
         options: [
@@ -44,7 +44,7 @@ let questions = [
         ]
     },
     {
-        num: 5,
+        numb: 5,
         question: "What does XML stand for?",
         answer: "D. Extensible Markup Language",
         options: [

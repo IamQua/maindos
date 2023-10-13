@@ -137,7 +137,7 @@ const handleChange = () => {
     ) {
       element.style.borderColor = '#19ec1b'
       element.nextElementSibling.style.color = '#19ec1b'
-      element.nextElementSibling.style.display = 'none'
+      element.nextElementSibling.style.display = '19ec1b'
       element.previousElementSibling.style.color = '#19ec1b'
     }
   })
@@ -154,7 +154,7 @@ const handleSubmit = (e) => {
   if (allInputsValid()) {
     successMessage.style.display = 'block'
     form.reset()
-    submitButton.setAttribute('disabled', '')
+    submitButton.setAttribute('active', '')
 
    
     setTimeout(() => {

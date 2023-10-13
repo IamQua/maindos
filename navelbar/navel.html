@@ -1,0 +1,69 @@
+<html>
+<head>
+  <!-- Include Bootstrap and jQuery libraries -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+  <!-- Create a <nav> element with Bootstrap classes -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- Create a <div> element with the class="container-fluid" -->
+    <div class="container-fluid">
+      <!-- Create a <a> element with the class="navbar-brand" for your logo or site name -->
+      <a class="navbar-brand" href="#">My Website</a>
+      <!-- Create a <button> element with the class="navbar-toggler" for the toggle icon -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarLinks">
+        <!-- Create three <span> elements with the class="navbar-toggler-icon" for the hamburger icon -->
+        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Create a <div> element with the class="collapse navbar-collapse" for the navbar links -->
+      <div class="collapse navbar-collapse" id="navbarLinks">
+        <!-- Create a <ul> element with the class="navbar-nav me-auto mb-2 mb-lg-0" for the unordered list of navbar links -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <!-- Create one or more <li> elements with the class="nav-item" for each navbar link -->
+          <li class="nav-item">
+            <!-- Create a <a> element with the class="nav-link" for each link -->
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Add some jQuery code to animate the navbar elements -->
+  <script>
+    // When the document is ready
+    $(document).ready(function() {
+      // Select the navbar brand element
+      var brand = $(".navbar-brand");
+      // Set its initial opacity to 0
+      brand.css("opacity", 0);
+      // Animate its opacity to 1 in 1 second
+      brand.animate({opacity: 1}, 1000);
+
+      // Select the navbar link elements
+      var links = $(".nav-link");
+      // Set their initial font size to 0
+      links.css("font-size", 0);
+      // Animate their font size to 16px in 1 second
+      links.animate({fontSize: "16px"}, 1000);
+
+      // Select the navbar toggle button element
+      var button = $(".navbar-toggler");
+      // Set its initial width and height to 0
+      button.css("width", 0);
+      button.css("height", 0);
+      // Animate its width and height to 40px in 1 second
+      button.animate({width: "40px", height: "40px"}, 1000);
+    });
+  </script>
+</body>
+</html>

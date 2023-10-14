@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins',sans-serif;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 body {
@@ -55,12 +55,6 @@ body {
     bottom: 20%;
     height: 100%;
     width: 52%;
-    
-    
-
-    
-    
-   
   }
 
 main {
@@ -105,12 +99,11 @@ main {
 }
 
 .home-content h1 {
-    position: relative;
+    position:relative;
     filter: drop-shadow(0 0 28px #cf2d94);
     font-size: 78px;
     font-weight: 700;
-    text-shadow: 0 0 10px rgba(0, 0, 0, .3);
-    
+    text-shadow: 0 0 10px rgba(0, 0, 0, .3); 
 }
 
 .home-content p {

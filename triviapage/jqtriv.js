@@ -16,7 +16,7 @@ $("h1").click(
 $(document).ready(function() { 
   var angle = 0; 
   var speed = 1; 
-  var increment = .00333;
+  var increment = .00300;
  
   var rotateBackground = function() {
     angle += increment; 

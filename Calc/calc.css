@@ -1,49 +1,114 @@
+/* Define the animation */
+@keyframes spin {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+/* Define the div container */
 .container {
-    min-height: 80vh;
+  width: 200px;
+  height: 200px;
+  background: lightblue;
+  position: relative;
+  
+}
+
+/* Create a pseudo-element for the ring */
+.container::before {
+  content: "";
+  position: absolute;
+  top: -360px;
+  left: -444px;
+  right: -444px;
+  bottom: -360px;
+  border-radius: 50%;
+  border: 547px dotted rgb(248, 20, 20); 
+  opacity: .32;
+  background:none;
+  
+
+  /* Apply the animation */
+  animation: spin 333s linear infinite;
+
+  /* Add the text-shadow */
+  
+  
+}
+
+
+
+
+
+
+body {
+  background-image: url("cauli.jpeg"); 
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-color: #000000;
+  
+}
+
+.container {
+    background-image: url("redwoodcry.jpeg") ;
+    border-radius: 50%;
+    width: 888px;
+    min-height: 98vh;
     margin-block: 0;
     display: flex;
-    
+    padding-bottom: 19px;
+    padding-left: 190px;
     align-items: center;
+    text-shadow: 5px 5px 10px 5px #ffccff, -5px -5px 10px 5px #ff99ff, 0 0
+    20px #fff;
   }
   
   .container > .row {
     flex-basis: 100%;
   }
   .card-body {
-    padding: 0;
+    border-radius: 34%;
+    padding: 3;
+    opacity: .8;
   }
   
   .btn {
     font-size: 1.2rem;
     padding: 0.75rem 1rem;
+    border-radius: 19%;
+
   }
   
   .btn-secondary {
     background-color: #0a9e92;
-    color: #333;
-    border: 1px solid #ccc;
+    color: #333; 
+    border: 1px solid #000000;
+    border-radius: 38%;
+
   }
   
   .btn-light {
-    background-color: palevioletred;
-    
+    background-color: rgb(245, 47, 192);
     color: #333;
-    border: 1px solid #ccc;
+    border: 1px solid #000000;
   }
   
   .btn-warning {
     background-color: #d31aa8;
-    color: #fff;
-    border: none;
+    color: #000000;
+    border: 1px solid #000000;
+    border-radius: 38%;
   }
   
   .btn-block {
-    width: 80%;
-    
+    width: 120%;
   }
   
   #zero-row {
-    margin-top: 0.7rem;
+    margin-top: .7rem;
   }
   
   .btn-block#zero {
@@ -55,10 +120,13 @@
   }
   
   .btn-group-vertical {
-    gap: 0.5235rem;
-    width: 80%;
+    gap: 1.5235rem;
+    width: 100%;
   }
   
   .btn-group-vertical > * {
     width: 100%;
   }
+
+
+  

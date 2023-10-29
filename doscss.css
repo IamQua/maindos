@@ -100,12 +100,12 @@ h1 {
   @media (max-width: 770px) {
   .header1,.wrapper,.card-list {flex-direction: column-reverse; align-items: center;gap: 1.5rem;}}}  .header1,.o0o,.name,.wrapper{display: flex; align-items: center; justify-content: space-evenly; margin-inline: auto; padding: 2rem; animation: fade-in-right 16s backwards;}
 
-  .o0o,.name{display: flex; align-items: center; justify-content: space-evenly; margin-inline: auto; padding: 2rem; animation: fade-in-left 16s backwards;}
+  .o0o,.name,.card-list{display: flex; align-items: center; justify-content: space-evenly; margin-inline: auto; padding: 2rem; animation: fade-in-left 16s backwards;}
   @keyframes fade-in-left {0% {transform: translateX(8%);opacity: 0;} 100% {transform: translateX(0);opacity: 1}}
   @media (prefers-reduced-motion)
-  {.o0o,.name{animation:none;}
+  {.o0o,.name,.card-list{animation:none;}
   @media (max-width: 770px) {
-  .o0o,.name {flex-direction: column-reverse; align-items: center;gap: 1.5rem;}}}
+  .o0o,.name,.card-list {flex-direction: column-reverse; align-items: center;gap: 1.5rem;}}}
 
 body {
     margin: 0;

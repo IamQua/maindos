@@ -1,50 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-   <title>Google Maps Tools</title>
-   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtCB5dVvn5R7QWKqCOSfHSQYy_dHGIDoc&callback=initMap&v=weekly" defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtCB5dVvn5R7QWKqCOSfHSQYy_dHGIDoc&callback=initMap&v=weekly" defer></script>
+    <head><title>Hello Google Maps</title></head>
+    <body>
+    <div id="map" style="width: 800px; height: 800px;"></div>
+        <div style="margin: auto;"> <br>
+            <label>Origin</label>
+            <input id="origin" type="textbox">
+            <label>Destination</label>
+            <input id="destination" type="textbox">
+            <input type="button" value="Search Route" onclick="calcRoute()">
+        </div> 
+    
+    <script>
+            var directionsService;
+            var directionsRenderer;
+            var map;
+            // Initialize and add the map
+            function initMap() {
+                directionsService = new google.maps.DirectionsService();
+                directionsRenderer = new google.maps.DirectionsRenderer();
+                const coordinates = { lat: 37.422040, lng: -122.082810 };
+    
+    
+                map = new google.maps.Map(document.getElementById("map"), {
+                    zoom: 13,
+                    center: coordinates,
+               });
+                directionsRenderer.setMap(map);
+            }
+    
+    
+            function calcRoute() {
+                var start = document.getElementById('origin').value;
+                var end = document.getElementById('destination').value;
+                var request = {
+                    origin: start,
+                    destination: end,
+                    travelMode: 'DRIVING'
+                };
+                directionsService.route(request, function (result, status) {
+                    if (status == 'OK') {
+                        directionsRenderer.setDirections(result);
+                    } else { alert("An unexpected error occurred")}
+                });
+            }
+            </script>
 
-</head>
-<body>
-   <div id="map" style="width: 600px; height: 400px;"></div>
-   <div>
-       <label>Origin</label>
-       <input id="origin" type="textbox">
-       <label>Destination</label>
-       <input id="destination" type="textbox">
-       <input type="button" value="Search Route" onclick="calcRoute()">
-   </div>
 
-   
-<script>
-       var directionsService;
-       var directionsRenderer;
-       var geocoder;
-       var map;
-       // Initialize and add the map
-       function initMap() 
-           directionsService = new google.maps.DirectionsService();
-           directionsRenderer = new google.maps.DirectionsRenderer();
-           geocoder = new google.maps.Geocoder();
-           const coordinates = { lat: 37.422040, lng: -122.082810 };
-           map = new google.maps.Map(document.getElementById("map"), {
-               zoom: 13,
-               center: coordinates,
-           });
-           directionsRenderer.setMap(map);
-function calcRoute() 
-           var start = document.getElementById('origin').value;
-           var end = document.getElementById('destination').value;
-           var request = {
-               origin: start,
-               destination: end,
-               travelMode: 'DRIVING'
-           };
-directionsService.route(request, function (result, status) {
-               if (status == 'OK') {
-                   directionsRenderer.setDirections(result);
-               }
-           });
-</script>
-</body>
-</html>
+  
+<form>
+    <table>
+    
+      <tr>
+        <td><input type="text" name="south" placeholder="South"></td>
+        <td><input type="text" name="east" placeholder="East"></td>
+        <td><input type="text" name="radius" placeholder="Radius"></td>
+      </tr>
+      <tr>
+        <td><input type="text" name="latitude" placeholder="Latitude"></td>
+        <td><input type="text" name="longitude" placeholder="Longitude"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><input type="text" name="latitude1" placeholder="Latitude1"></td>
+        <td rowspan="2"><input type="text" name="longitude1" placeholder="Longitude1"></td>
+        <td rowspan="2"><button>Create rectangle</button></td>      
+      </tr>    
+      <tr>
+        <td><input type="text" name="latitude2" placeholder="Latitude2"></td>      
+      </tr>    
+    </table>
+  
+    <div style='margin-top: 10px;'>
+      <button>Create polyline</button> 
+    </div>
+  
+  </form>
+  
+
+
+
+
+
+
+            </body>
+    </html>

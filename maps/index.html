@@ -1,17 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtCB5dVvn5R7QWKqCOSfHSQYy_dHGIDoc&callback=initMap&v=weekly" defer></script>
-    <head><title>Hello Google Maps</title></head>
+    <style>  body {
+       background-color: black;
+       background-image: url("assets/earf.png");
+       background-repeat: no-repeat;
+       background-size:cover;
+       margin-right: -64%;
+       
+       
+      }
+       
+
+      
+      label, input, button {
+          color: rgb(0, 0, 0);
+          text-shadow: 8px 8px 8px 88px color white;
+          border-color: rgb(251, 19, 162);
+          border-radius: 28%;
+      }
+  </style>
+    <head><title>Async Google Map</title></head>
     <body>
-    <div id="map" style="width: 800px; height: 800px;"></div>
-        <div style="margin: auto;"> <br>
+      <h1 style="color: rgb(255, 255, 255);text-align: center; "> Our beautiful Earth!</h1>
+    <div id="map" style="width: 444px; height: 444px; margin: auto;"></div>
+        <div style="text-align: center;"> <br>
             <label>Origin</label>
             <input id="origin" type="textbox">
             <label>Destination</label>
             <input id="destination" type="textbox">
             <input type="button" value="Search Route" onclick="calcRoute()">
         </div> 
-    
     <script>
             var directionsService;
             var directionsRenderer;
@@ -29,8 +48,6 @@
                });
                 directionsRenderer.setMap(map);
             }
-    
-    
             function calcRoute() {
                 var start = document.getElementById('origin').value;
                 var end = document.getElementById('destination').value;
@@ -46,43 +63,6 @@
                 });
             }
             </script>
-
-
-  
-<form>
-    <table>
-    
-      <tr>
-        <td><input type="text" name="south" placeholder="South"></td>
-        <td><input type="text" name="east" placeholder="East"></td>
-        <td><input type="text" name="radius" placeholder="Radius"></td>
-      </tr>
-      <tr>
-        <td><input type="text" name="latitude" placeholder="Latitude"></td>
-        <td><input type="text" name="longitude" placeholder="Longitude"></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><input type="text" name="latitude1" placeholder="Latitude1"></td>
-        <td rowspan="2"><input type="text" name="longitude1" placeholder="Longitude1"></td>
-        <td rowspan="2"><button>Create rectangle</button></td>      
-      </tr>    
-      <tr>
-        <td><input type="text" name="latitude2" placeholder="Latitude2"></td>      
-      </tr>    
-    </table>
-  
-    <div style='margin-top: 10px;'>
-      <button>Create polyline</button> 
-    </div>
-  
-  </form>
-  
-
-
-
-
-
 
             </body>
     </html>

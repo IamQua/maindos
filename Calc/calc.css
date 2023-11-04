@@ -1,4 +1,4 @@
-/* Define the animation */
+/* Defining the animation */
 @keyframes spin {
   from {
     transform: rotate(360deg);
@@ -8,7 +8,7 @@
   }
 }
 
-/* Define the div container */
+
 .container {
   width: 200px;
   height: 200px;
@@ -17,7 +17,7 @@
   
 }
 
-/* Create a pseudo-element for the ring */
+/* Creating an outstanding pseudo-element for the ring... but.. it works almost just as I imagined :) */
 .container::before {
   content: "";
   position: absolute;
@@ -31,18 +31,9 @@
   background:none;
   
 
-  /* Apply the animation */
+  /* Applying the animation */
   animation: spin 333s linear infinite;
-
-  /* Add the text-shadow */
-  
-  
 }
-
-
-
-
-
 
 body {
   background-image: url("cauli.jpeg"); 

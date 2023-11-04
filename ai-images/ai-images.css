@@ -22,6 +22,29 @@ h1 {
   color: rgb(108, 217, 181);
 }
 
+.container {
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+  border: 1px solid black;
+}
+
+.container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: zoom-out 16s ease-in-out infinite alternate ; 
+}
+
+@keyframes zoom-out {
+  from {
+    transform: scale(.8);
+  }
+  to {
+    transform: scale(1.68); 
+  }
+}
+
 
 .container {
   display: grid;
@@ -30,14 +53,18 @@ h1 {
   place-content: center;
   gap: 1rem;
   text-align: center;
+  overflow: hidden;
+  border: 1px solid black;
 }
+
+
 
 #slider {
   position: relative;
   width: 888px;
   height: 988px;
 }
-/* Write your CSS below */
+
 #slider img {
   position: absolute;
   top: 0;
@@ -48,6 +75,7 @@ h1 {
   transition: all 1s ease-in-out;
   border-radius: 28%;
 }
+
 
 #slider img.active {
   opacity: 1;

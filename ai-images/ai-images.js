@@ -2,6 +2,7 @@ const images = document.querySelectorAll('#slider img');
 const previousImage = document.getElementById("prev");
 const nextImage = document.getElementById("next");
 
+
 let currentIndex = 0;
 
 function reset() {
@@ -41,3 +42,4 @@ previousImage.addEventListener('click', function() {
 nextImage.addEventListener('click', function() {
   slideRight();
 });
+

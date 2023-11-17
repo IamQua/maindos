@@ -1,0 +1,70 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> <meta charset="utf-8" /> <title>My Basic Form</title> </head> <body> <h1 style="text-align:center;">Newsletter Sign-Up</h1> 
+<form name="MyForm" method="Post" action="thankyou.html"> 
+  <div style="text-align:center;">
+    <input type="text" name="fullname" placeholder="Your name*"> 
+    <input type="text" name="email" placeholder="Your email*">
+    <input type="text" name="phone" placeholder="Your Phone Number*">
+    
+    <input type="submit" name="submit" value="Submit" onClick="javascript:return validateInputs();"> 
+  </div> 
+</form> 
+
+<script> function validateInputs() { 
+var SubmitForm; var FormErrors; 	
+SubmitForm = true; 
+ 
+var fullname = new String(document.MyForm.fullname.value); 
+var email = new String(document.MyForm.email.value); 
+var phone = new String(document.MyForm.phone.value); //added this line
+
+
+if ( fullname.length<1 || email.length<1 || phone.length<1 ) { 
+  FormErrors = "All fields are mandatory. Please complete the form.";          
+  SubmitForm = false; 
+} else { 
+
+  var filter = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i; 
+
+
+if (!filter.test(email)) { 
+  FormErrors = "Your form contains invalid field entries. Please correct your form before submitting"; 
+  SubmitForm = false; } 
+
+ 
+  var filter = /^\d{3}[-.]?\d{3}[-.]?\d{4}$/; 
+
+
+if (!filter.test(phone)) { 
+  FormErrors = "Your phone number is not valid. Please enter a 10-digit number with or without hyphens or dots."; 
+  SubmitForm = false; } 
+} 
+
+if (SubmitForm == false) { 
+  alert(FormErrors); 
+  return false; 
+} else { 
+  //SANITIZE user inputs by allowing only [a-z 0-9 _ - . @] 
+  
+fullname = fullname.replace(/[^a-z0-9\s\-]/gim,""); 
+fullname = fullname.trim(); 
+email = email.replace(/[^a-z0-9_@.-]/gim,""); 
+email = email.trim(); 
+
+phone = phone.replace(/[^0-9.-]/gim,""); 
+phone = phone.trim();
+
+//added this block to sanitize the phone number input before submitting the form
+//remove any hyphens or dots from the phone number
+phone = phone.replace(/[-.]/g,"");
+//format the phone number as (xxx) xxx-xxxx
+phone = "(" + phone.slice(0,3) + ") " + phone.slice(3,6) + "-" + phone.slice(6,10);
+//set the phone input value to the sanitized phone number
+document.MyForm.phone.value = phone;
+
+//ready to submit 
+document.MyForm.submit(); } } 
+
+
+</script> </body> </html>
